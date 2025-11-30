@@ -1,1 +1,171 @@
-hi
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fudidos SMP - Servidor de Minecraft</title>
+  <link rel="stylesheet" href="res/style.css" />
+</head>
+<body>
+  <div id="particles"></div>
+
+  <nav class="navbar">
+    <div class="logo">Fudidos SMP</div>
+    <div class="nav-links">
+      <a href="#hero">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#downloads">Downloads</a>
+      <a href="#doacoes">Doações</a>
+    </div>
+  </nav>
+
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>FUDIDOS SMP</h1>
+      <p>Um servidor de Minecraft para os Fudidos que querem fazer piada e dar risada em um mundo sem limites.</p>
+      <a href="https://discord.gg/vhU3kRzjFt" target="_blank" class="cta-btn">Entrar no Discord</a>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <h2 class="section-title">Sobre o Servidor</h2>
+    <p class="section-subtitle">Servidor Survival com elementos FPS/RPG, com foco em diversão, liberdade criativa e roleplay.</p>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>🎮 Diversão</h3>
+        <p>Sem regras rígidas, apenas humor e piadas. Aqui você é livre para criar, explorar e zoar com os amigos.</p>
+      </div>
+      <div class="about-card">
+        <h3>🌍 Mundo Aberto</h3>
+        <p>Explore um mundo vasto cheio de possibilidades, construa sua casa, farms, lute contra bosses e seja o mais PIKA.</p>
+      </div>
+      <div class="about-card">
+        <h3>🎭 Roleplay</h3>
+        <p>Crie histórias incríveis, desenvolva seu personagem e faça parte de nossa cidade Fudida.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="downloads">
+    <h2 class="section-title">Downloads</h2>
+    <p class="section-subtitle">Baixe o que você precisa para jogar no servidor</p>
+    <div class="downloads-grid">
+      <div class="download-card">
+        <div class="download-icon">🎮</div>
+        <h3>Minecraft</h3>
+        <p>Baixe o Minecraft para começar a jogar</p>
+        <button class="download-btn" onclick="openMinecraftModal()">Baixar Minecraft</button>
+      </div>
+      <div class="download-card">
+        <div class="download-icon">📦</div>
+        <h3>Mods</h3>
+        <p>Instale os mods necessários para o servidor</p>
+        <button class="download-btn" onclick="openModsModal()">Baixar Mods</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="doacoes">
+    <h2 class="section-title">Apoie o Servidor</h2>
+    <p class="section-subtitle">Suas doações mantêm o servidor online.</p>
+    <div class="tiers">
+      <div class="tier">
+        <h3>Tier 1</h3>
+        <div class="price">R$10</div>
+        <ul>
+          <li>Cargo Tier 1 no Discord</li>
+          <li>Poder de sugerir mods/mudanças no server</li>
+        </ul>
+        <button class="tier-btn">Doar Agora</button>
+      </div>
+      <div class="tier">
+        <h3>Tier 2</h3>
+        <div class="price">R$25</div>
+        <ul>
+          <li>Cargo Tier 2 no Discord</li>
+          <li>Todos os benefícios do Tier 1</li>
+          <li>Acesso a chat da prefeitura</li>
+        </ul>
+        <button class="tier-btn">Doar Agora</button>
+      </div>
+      <div class="tier">
+        <h3>Tier 3</h3>
+        <div class="price">R$50</div>
+        <ul>
+          <li>Cargo Tier 3 no Discord</li>
+          <li>Todos os benefícios do Tier 2</li>
+          <li>Prioridade nas sugestões</li>
+        </ul>
+        <button class="tier-btn">Doar Agora</button>
+      </div>
+      <div class="tier">
+        <h3>Tier 4</h3>
+        <div class="price">R$100</div>
+        <ul>
+          <li>Cargo Tier 4 no Discord</li>
+          <li>Todos os benefícios do Tier 3</li>
+          <li>Pode escolher o cargo do personagem</li>
+        </ul>
+        <button class="tier-btn">Doar Agora</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Fudidos RP — Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Modal Pix -->
+  <div id="pixModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('pixModal')">&times;</span>
+      <h2>Doar <span id="modalValue"></span></h2>
+      <div class="pix-info">
+        <p class="pix-label">Chave Pix:</p>
+        <div class="pix-key" id="pixKey">nx@s2.rip</div>
+        <button class="copy-btn" onclick="copyPix()">
+          <span id="copyText">📋 Copiar Chave</span>
+        </button>
+      </div>
+      <p class="modal-instructions">Após realizar o pagamento, envie o comprovante no Discord para ativar seus benefícios!</p>
+    </div>
+  </div>
+
+  <!-- Modal Minecraft -->
+  <div id="minecraftModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('minecraftModal')">&times;</span>
+      <h2>Baixar Minecraft</h2>
+      <div class="download-options">
+        <a href="https://modrinth.com/app" target="_blank" class="download-option-btn">
+          <span class="option-icon">🚀</span>
+          <span class="option-text">Modrinth (Original)</span>
+        </a>
+        <a href="https://llaun.ch" target="_blank" class="download-option-btn">
+          <span class="option-icon">⬇️</span>
+          <span class="option-text">Launcher Alternativo</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Mods -->
+  <div id="modsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modsModal')">&times;</span>
+      <h2>Baixar Mods</h2>
+      <div class="download-options">
+        <a href="https://pixeldrain.com/u/at1xvS9J" target="_blank" class="download-option-btn">
+          <span class="option-icon">🚀</span>
+          <span class="option-text">Instalar com Modrinth</span>
+        </a>
+        <a href="https://pixeldrain.com/u/Nobtuy2Q" target="_blank" class="download-option-btn">
+          <span class="option-icon">📁</span>
+          <span class="option-text">Instalar Manualmente</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <script src="res/script.js"></script>
+</body>
+</html>
